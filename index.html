@@ -36,18 +36,27 @@
             controls = new THREE.OrbitControls( camera, renderer.domElement );
 
             //create the shape
-            //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+            var geometry = new THREE.BoxGeometry( 5, 5, 5 );
             //var geometry = new THREE.ConeGeometry( 15, 10, 5, 1, true );
             //var geometry = new THREE.CylinderGeometry( 5, 5, 30, 20 );
-            var geometry = new THREE.SphereGeometry( 10, 10, 10 );
+            //var geometry = new THREE.SphereGeometry( 10, 10, 10 );
+            var cubeMaterials = [
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/1.jpg'), side: THREE.DoubleSide }),
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/2.jpg'), side: THREE.DoubleSide }),
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/3.jpg'), side: THREE.DoubleSide }),
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/4.jpg'), side: THREE.DoubleSide }),
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/5.jpg'), side: THREE.DoubleSide }),
+                new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load('img/6.jpg'), side: THREE.DoubleSide }),
+                
+            ]
 
             //create a material, colour or image texture
-            var material = new THREE.MeshBasicMaterial( {
+            /* var material = new THREE.MeshBasicMaterial( {
                 color: 0xFFFFFF,
                 wireframe: true
-             } );
+             } ); */
 
-             var cube = new THREE.Mesh ( geometry, material );
+             var cube = new THREE.Mesh ( geometry, cubeMaterials );
              scene.add( cube );
 
              camera.position.z = 30;
