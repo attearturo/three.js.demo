@@ -69,5 +69,3 @@ function animate() {
 
 }
 ```
-
-If everything went well you should see [this](https://jsfiddle.net/f2Lommf5/).
